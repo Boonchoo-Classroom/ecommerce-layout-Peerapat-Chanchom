@@ -76,5 +76,4 @@
         android:clickable="true"
         android:onClick="onButtonDetailsClick"
         android:text="ดูรายละเอียด" />
-
 </LinearLayout>

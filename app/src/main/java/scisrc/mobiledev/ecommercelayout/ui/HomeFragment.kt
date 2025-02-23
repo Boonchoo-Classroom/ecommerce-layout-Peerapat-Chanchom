@@ -26,11 +26,10 @@ class HomeFragment : Fragment() {
 
 
     fun onButtonDetailsClick(view: View) {
-        try {
-            // นำทางไปยัง ProductDetailFragment
-            findNavController().navigate(R.id.action_home_to_productDetail)
-        } catch (e: Exception) {
-            e.printStackTrace() // แสดงข้อผิดพลาดใน Logcat
-        }
+        findNavController().navigate(R.id.action_home_to_productDetail)
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
