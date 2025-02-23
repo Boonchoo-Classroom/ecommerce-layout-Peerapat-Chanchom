@@ -14,7 +14,7 @@
     <ImageView
         android:id="@+id/imageFavProduct"
         android:layout_width="125dp"
-        android:layout_height="75dp"
+        android:layout_height="74dp"
         android:scaleType="centerCrop"
         android:src="@drawable/six"
         app:layout_constraintStart_toStartOf="parent"
