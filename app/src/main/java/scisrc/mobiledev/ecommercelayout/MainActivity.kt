@@ -1,14 +1,16 @@
 package scisrc.mobiledev.ecommercelayout
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import scisrc.mobiledev.ecommercelayout.databinding.ActivityMainBinding
-import scisrc.mobiledev.ecommercelayout.ui.Cart
-import scisrc.mobiledev.ecommercelayout.ui.Favorite
+import scisrc.mobiledev.ecommercelayout.ui.CartFragment
+import scisrc.mobiledev.ecommercelayout.ui.FavoriteFragment
 import scisrc.mobiledev.ecommercelayout.ui.HomeFragment
 import scisrc.mobiledev.ecommercelayout.ui.ProductList
 import scisrc.mobiledev.ecommercelayout.ui.Profile
@@ -55,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_cart -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, Cart())
+                        .replace(R.id.fragment_container, CartFragment())
                         .commit()
                 }
                 R.id.nav_profile -> {
@@ -65,7 +67,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_fav -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, Favorite())
+                        .replace(R.id.fragment_container, FavoriteFragment())
                         .commit()
                 }
 
@@ -86,4 +88,10 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
+    fun onButtonDetailsClick(view: View) {
+        val navController = findNavController(R.id.fragment_container)
+        navController.navigate(R.id.action_home_to_productDetail)
+    }
+
+
 }

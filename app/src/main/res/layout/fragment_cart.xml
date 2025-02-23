@@ -1,14 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.Cart">
 
-    <Button
-        android:id="@+id/button2"
+    <!-- Header: Cart Title -->
+    <TextView
+        android:id="@+id/titleCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cart"
-        tools:layout_editor_absoluteX="164dp"
-        tools:layout_editor_absoluteY="326dp" />
+        android:text="ตะกร้าสินค้า"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- RecyclerView for Cart Items -->
+
+    <!-- Total Price Layout -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewCart"
+        android:layout_width="365dp"
+        android:layout_height="476dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/totalPriceLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleCart"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/item_cart" />
+
+    <LinearLayout
+        android:id="@+id/totalPriceLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonCheckout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ยอดรวมทั้งหมด"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="฿5500.00"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Checkout Button -->
+    <Button
+        android:id="@+id/buttonCheckout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ชำระเงิน"
+        android:backgroundTint="#685E5E"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

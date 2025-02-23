@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Product Image Gallery (ViewPager2) -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerProductImages"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#685E5E"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Product Name & Price -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New Balance 550"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textProductPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="฿4,500"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- Size Selection -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#BEBEBE">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="เลือกไซส์"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewSizes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_size"/>
+        </LinearLayout>
+
+        <!-- Color Options -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="เลือกสี"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:id="@+id/layoutColorOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:spacing="8dp">
+                <!-- Color items will be added programmatically -->
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Product Description -->
+        <TextView
+            android:id="@+id/textProductDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="รองเท้าวิ่งสุดฮิตจาก Nike ดีไซน์ล้ำยุค พร้อมเทคโนโลยี Air Max ที่ให้ความรู้สึกนุ่มสบาย"
+            android:textSize="16sp"
+            android:padding="16dp"/>
+
+        <!-- Product Specifications -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="#BEBEBE">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="รายละเอียดสินค้า"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textSpecifications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="• วัสดุพื้นด้านนอก: ผ้าใบ\n• วัสดุพื้นรองใน: โฟม\n• เทคโนโลยี: Air Max Unit\n• น้ำหนัก: 320 กรัม/ข้าง"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- Fixed Bottom Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="8dp">
+
+            <Button
+                android:id="@+id/buttonAddToCart"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="เพิ่มลงตะกร้า"
+                android:backgroundTint="#685E5E"
+                android:textColor="@android:color/white"/>
+
+            <ImageButton
+                android:id="@+id/buttonFavorite"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="#685E5E"
+                android:contentDescription="Add to Favorites"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

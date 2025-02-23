@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/one" />
+
+    <TextView
+        android:id="@+id/txtProductName4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="Ross Jaden"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnDetails4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#685E5E"
+        android:text="ดูรายละเอียด" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/five" />
+
+    <TextView
+        android:id="@+id/txtProductName3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:text="Nike Dunk High By You"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnDetails3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#685E5E"
+        android:text="ดูรายละเอียด" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/_50" />
+
+    <TextView
+        android:id="@+id/txtProductName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="287dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:paddingTop="8dp"
+        android:text="New Balance 550"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnDetails"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#685E5E"
+        android:clickable="true"
+        android:onClick="onButtonDetailsClick"
+        android:text="ดูรายละเอียด" />
+
+</LinearLayout>

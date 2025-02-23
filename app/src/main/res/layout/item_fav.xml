@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Product Image -->
+    <ImageView
+        android:id="@+id/imageFavProduct"
+        android:layout_width="125dp"
+        android:layout_height="75dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/six"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Product Name -->
+    <TextView
+        android:id="@+id/textFavProductName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="ชื่อสินค้า"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/imageFavProduct"
+        app:layout_constraintStart_toEndOf="@id/imageFavProduct"
+        app:layout_constraintEnd_toStartOf="@id/buttonRemoveFav"
+        android:layout_marginEnd="8dp" />
+
+    <!-- Product Price -->
+    <TextView
+        android:id="@+id/textFavProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="฿0.00"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textFavProductName"
+        app:layout_constraintStart_toStartOf="@id/textFavProductName"
+        android:layout_marginTop="4dp" />
+
+    <!-- Remove from Favourite Button -->
+    <ImageButton
+        android:id="@+id/buttonRemoveFav"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Remove from Favourite"
+        android:src="@android:drawable/ic_menu_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
